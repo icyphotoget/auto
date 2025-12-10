@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kalkulator troška auta – KolikoAuto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+  </head>
+
+  <body class="bg-gradient-to-b from-[#f7f8fa] to-[#eceef0] text-neutral-900">
+    <div class="min-h-screen flex flex-col">
+
+      <!-- HEADER -->
+      <header class="w-full border-b border-black/10 bg-white/80 backdrop-blur-md">
+        <div
+          class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between"
+        >
+          <a href="/index.html" class="flex items-center gap-2">
+            <div
+              class="h-8 w-8 rounded-xl bg-neutral-900 text-white flex items-center justify-center text-xs font-bold shadow"
+            >
+              €
+            </div>
+            <span class="text-sm font-semibold tracking-tight">KolikoAuto</span>
+          </a>
+
+          <a
+            href="/index.html"
+            class="text-xs text-neutral-600 hover:text-emerald-600 transition"
+          >
+            ← Natrag na početnu
+          </a>
+        </div>
+      </header>
+
+      <!-- MAIN -->
+      <main class="flex-1 w-full">
+        <div class="max-w-5xl mx-auto px-4 py-10">
+          
+          <h1 class="text-3xl font-bold mb-3">Kalkulator stvarnog troška auta</h1>
+          <p class="text-sm text-neutral-600 max-w-xl mb-8">
+            Odaberi auto, unesi godišnje kilometre i cijenu goriva. Dobit ćeš procjenu 
+            ukupnog godišnjeg i mjesečnog troška vlasništva u Hrvatskoj.
+          </p>
+
+          <!-- GLASS PANEL -->
+          <section
+            class="rounded-3xl bg-white/70 backdrop-blur-xl border border-white shadow-lg px-6 py-8"
+          >
+            <h2 class="text-lg font-semibold mb-4 flex items-center justify-between">
+              1. Unesi podatke
+
+              <span class="text-[10px] tracking-widest uppercase bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full border border-neutral-300">
+                Kalkulator
+              </span>
+            </h2>
+
+            <!-- FORM -->
+            <form id="calc-form" class="space-y-6">
+              
+              <!-- SELECT -->
+              <div>
+                <label class="block text-sm font-medium mb-1">Model auta</label>
+
+                <select
+                  id="car-select"
+                  class="block w-full rounded-xl border border-neutral-300 bg-white px-3 py-3 text-sm text-neutral-900 shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  required
+                >
+                  <option value="">Učitavanje modela...</option>
+                </select>
+              </div>
+
+              <!-- KM + CIJENA -->
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium mb-1">
+                    Godišnja kilometraža
+                  </label>
+                  <input
+                    type="number"
+                    id="annual-km"
+                    placeholder="npr. 15 000"
+                    class="block w-full rounded-xl border border-neutral-300 bg-white px-3 py-3 text-sm shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-1">
+                    Cijena goriva po litri (€)
+                  </label>
+                  <input
+                    type="number"
+                    id="fuel-price"
+                    value="1.50"
+                    step="0.01"
+                    class="block w-full rounded-xl border border-neutral-300 bg-white px-3 py-3 text-sm shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- BUTTON -->
+              <button
+                type="submit"
+                class="rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 text-sm font-semibold shadow-md transition"
+              >
+                Izračunaj trošak auta
+              </button>
+            </form>
+
+
+            <!-- RESULTS -->
+            <section id="results" hidden class="mt-10 pt-6 border-t border-neutral-300">
+              <h2 class="text-lg font-semibold mb-4">2. Tvoj trošak auta</h2>
+
+              <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div class="rounded-xl bg-white p-4 border border-neutral-200 shadow">
+                  <p class="text-xs text-neutral-600">Godišnji trošak</p>
+                  <p id="total-yearly" class="text-2xl font-bold mt-1">–</p>
+                </div>
+
+                <div class="rounded-xl bg-white p-4 border border-neutral-200 shadow">
+                  <p class="text-xs text-neutral-600">Mjesečni trošak</p>
+                  <p id="total-monthly" class="text-2xl font-bold mt-1">–</p>
+                </div>
+              </div>
+
+              <h3 class="font-semibold mb-2">Detalji po kategorijama</h3>
+              <div class="space-y-1 text-sm">
+                <div class="flex justify-between"><span>Gorivo</span> <span id="fuel-yearly">–</span></div>
+                <div class="flex justify-between"><span>Registracija + osiguranje</span> <span id="ins-yearly">–</span></div>
+                <div class="flex justify-between"><span>Servis</span> <span id="service-yearly">–</span></div>
+                <div class="flex justify-between"><span>Gume</span> <span id="tires-yearly">–</span></div>
+                <div class="flex justify-between"><span>Neplanirani kvarovi</span> <span id="repairs-yearly">–</span></div>
+                <div class="flex justify-between"><span>Amortizacija</span> <span id="depr-yearly">–</span></div>
+              </div>
+
+              <p class="text-xs text-neutral-500 mt-4">
+                Procjene su temeljene na stvarnim troškovima prosječnog vozača u Hrvatskoj.
+              </p>
+            </section>
+
+          </section>
+        </div>
+      </main>
+
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

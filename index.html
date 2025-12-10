@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>KolikoAuto – Koliko te auto stvarno košta?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/public/css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-[#f4f5f8] text-neutral-900">
+    <div class="min-h-screen flex flex-col">
+
+      <!-- HEADER -->
+      <header class="w-full bg-white/85 border-b border-black/5 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6 py-4 flex items-center justify-between gap-4">
+          <a href="/index.html" class="flex items-center gap-2">
+            <div
+              class="h-8 w-8 rounded-xl bg-neutral-900 text-white flex items-center justify-center text-xs font-bold shadow"
+            >
+              €
+            </div>
+            <span class="text-sm font-semibold tracking-tight">KolikoAuto</span>
+          </a>
+
+          <nav class="hidden sm:flex items-center gap-5 text-xs text-neutral-600">
+            <a href="#kako-racunamo" class="hover:text-emerald-600 transition-colors">
+              Kako radimo
+            </a>
+            <a href="#faq" class="hover:text-emerald-600 transition-colors">
+              FAQ
+            </a>
+            <a
+              href="/calculator.html"
+              class="rounded-full bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-1.5 font-semibold shadow-md shadow-emerald-400/40 transition"
+            >
+              Otvori kalkulator
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- MAIN -->
+      <main class="flex-1 w-full">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6 pt-12 pb-20 space-y-10">
+
+          <!-- HERO NASLOV -->
+          <section class="space-y-3">
+            <p class="text-xs uppercase tracking-[0.22em] text-neutral-500">
+              Realan trošak vlasništva auta
+            </p>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+              Koliko te auto stvarno košta
+              <span class="text-emerald-600">mjesečno?</span>
+            </h1>
+            <p class="text-sm sm:text-base text-neutral-600 max-w-xl">
+              Unesi svoj auto i godišnju kilometražu – dobit ćeš realan godišnji i mjesečni trošak
+              vlasništva za hrvatske uvjete: gorivo, registracija, servis, gume, kvarovi i
+              amortizacija.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 pt-1">
+              <a
+                href="/calculator.html"
+                class="inline-flex items-center justify-center rounded-full bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 text-sm font-semibold shadow-md shadow-emerald-400/40 transition"
+              >
+                Pokreni kalkulator troška
+              </a>
+              <p class="text-[11px] text-neutral-500">
+                Bez registracije. Procjena u par sekundi.
+              </p>
+            </div>
+          </section>
+
+    <!-- HERO SLIKA + FULL-WIDTH GLASS OVERLAY -->
+<section class="relative rounded-[32px] bg-white shadow-lg shadow-black/10 overflow-hidden">
+
+  <!-- Slika auta -->
+  <img
+    src="/cars/hero-car.png"
+    alt="Primjer auta"
+    class="w-full h-[440px] sm:h-[520px] lg:h-[560px] object-cover"
+  />
+
+ <!-- FULL-WIDTH RIGHT SIDE GLASS CARD -->
+<div
+  class="absolute bottom-6 right-6 
+         w-[60%] lg:w-[55%] xl:w-[50%]
+         rounded-3xl bg-white/70 border border-white/50 
+         backdrop-blur-2xl shadow-[0_18px_45px_rgba(15,23,42,0.25)]
+         p-6 sm:p-8 lg:p-10"
+>
+  <h3 class="text-xl lg:text-2xl font-semibold text-neutral-900 mb-3">
+    Koliko te tvoj auto stvarno košta?
+  </h3>
+
+  <p class="text-sm sm:text-base text-neutral-700 leading-relaxed mb-5">
+    Unesi auto i godišnju kilometražu – dobit ćeš razbijen trošak po kategorijama:
+    gorivo, registracija, servis, gume, kvarovi i amortizacija. Bez filtera i marketinga – samo realne procjene.
+  </p>
+
+  <a
+    href="/calculator.html"
+    class="inline-flex items-center justify-center rounded-full bg-emerald-500 hover:bg-emerald-600
+           text-white text-sm sm:text-base px-6 py-3 font-semibold shadow-md shadow-emerald-400/40 transition"
+  >
+    Otvori kalkulator
+  </a>
+</div>
+
+
+</section>
+
+          <!-- NOVA GLASS SEKCIJA: KOLIKO TE KOŠTA TVOJ AUTO? -->
+          <section
+            class="rounded-3xl bg-white/80 border border-white shadow-md backdrop-blur-md px-5 sm:px-6 py-5 sm:py-6 space-y-3"
+          >
+            <h2 class="text-xl sm:text-2xl font-semibold">
+              Koliko te tvoj auto stvarno košta – u brojkama, ne osjećaju.
+            </h2>
+            <p class="text-sm text-neutral-600 max-w-3xl">
+              Većina ljudi zna koliko plaća gorivo i ratu kredita, ali ne vidi stvarni godišnji
+              trošak vlasništva: registraciju, servis, gume, kvarove i pad vrijednosti auta.
+              Kalkulator ti sve to pretvori u jasan godišnji i mjesečni iznos.
+            </p>
+            <div class="grid gap-3 sm:grid-cols-3 text-[11px] text-neutral-600">
+              <div>
+                <p class="font-semibold text-neutral-800 mb-1">Godišnji trošak</p>
+                <p>
+                  Koliko te auto košta u jednoj godini, sa svim realnim troškovima vlasništva
+                  uračunatima.
+                </p>
+              </div>
+              <div>
+                <p class="font-semibold text-neutral-800 mb-1">Mjesečni trošak</p>
+                <p>
+                  Koliko ti zapravo “ode” mjesečno – bez obzira plaćaš li kredit, keš ili voziš
+                  rabljeni auto.
+                </p>
+              </div>
+              <div>
+                <p class="font-semibold text-neutral-800 mb-1">Breakdown po kategorijama</p>
+                <p>
+                  Vidjet ćeš koliko otpada na gorivo, servis, gume, registraciju, kvarove i
+                  amortizaciju.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- GLASS GRID: Zašto / Za koga / Za koje tržište -->
+          <section class="space-y-3">
+            <h2 class="text-sm font-semibold text-neutral-800">
+              Što ovo rješava?
+            </h2>
+            <div class="grid gap-4 md:grid-cols-3">
+              <div
+                class="rounded-2xl bg-white/80 border border-white shadow-sm backdrop-blur-md px-4 py-4"
+              >
+                <h3 class="font-semibold mb-1 text-[13px]">Zašto ovo postoji?</h3>
+                <p class="text-[11px] text-neutral-600 leading-relaxed max-w-xs">
+                  Većina računa samo gorivo i ratu kredita. Mi uključujemo i servis, gume,
+                  registraciju, kvarove i amortizaciju – sve što ti stvarno jede budžet, ali ga ne
+                  vidiš svaki mjesec.
+                </p>
+              </div>
+              <div
+                class="rounded-2xl bg-white/80 border border-white shadow-sm backdrop-blur-md px-4 py-4"
+              >
+                <h3 class="font-semibold mb-1 text-[13px]">Za koga je?</h3>
+                <p class="text-[11px] text-neutral-600 leading-relaxed max-w-xs">
+                  Za svakoga tko razmišlja o kupnji auta ili već ima auto i želi znati koliko ga
+                  objektivno košta godišnje i mjesečno – bez uljepšavanja.
+                </p>
+              </div>
+              <div
+                class="rounded-2xl bg-white/80 border border-white shadow-sm backdrop-blur-md px-4 py-4"
+              >
+                <h3 class="font-semibold mb-1 text-[13px]">Za koje tržište?</h3>
+                <p class="text-[11px] text-neutral-600 leading-relaxed max-w-xs">
+                  Brojke su prilagođene hrvatskom tržištu: cijene goriva, servisa, registracije i
+                  realnoj vrijednosti rabljenih vozila u Hrvatskoj.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- KAKO RAČUNAMO (GLASS) -->
+          <section id="kako-racunamo" class="space-y-3">
+            <h2 class="text-sm font-semibold text-neutral-800">
+              Kako računamo troškove?
+            </h2>
+            <div
+              class="rounded-2xl bg-white/80 border border-white shadow-sm backdrop-blur-md px-4 py-4 space-y-3"
+            >
+              <p class="text-xs text-neutral-700 max-w-3xl">
+                Ne obećavamo “točnost u cent”. Računamo realne procjene temeljene na stvarnoj
+                potrošnji modela, trenutačnim cijenama na tržištu i prosječnim servisnim satnicama u
+                Hrvatskoj.
+              </p>
+              <div
+                class="bg-neutral-900/85 rounded-xl border border-black/10 px-3 py-2 text-[11px] font-mono text-neutral-100 space-y-1"
+              >
+                <p>gorivo = (km / 100) × potrošnja × cijena goriva</p>
+                <p>amortizacija = (kupovna cijena − buduća vrijednost) / godine</p>
+              </div>
+              <p class="text-[11px] text-neutral-500">
+                Podaci: Spritmonitor, Njuškalo, AutoScout, javno dostupni cjenici servisa i iskustva
+                vozača u HR.
+              </p>
+            </div>
+          </section>
+
+          <!-- FAQ (GLASS) -->
+          <section id="faq" class="space-y-3">
+            <h2 class="text-sm font-semibold text-neutral-800">
+              Česta pitanja
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+              <div
+                class="rounded-2xl bg-white/80 border border-white shadow-sm backdrop-blur-md px-4 py-4"
+              >
+                <h3 class="font-semibold mb-1 text-[13px]">Jesu li ovo 100% točni iznosi?</h3>
+                <p class="text-[11px] text-neutral-600 leading-relaxed">
+                  Ne. Ovo su realne procjene za prosječnog vozača. Tvoj trošak može biti viši ili
+                  niži ovisno o stilu vožnje, gradu, radijusu kretanja i održavanju.
+                </p>
+              </div>
+              <div
+                class="rounded-2xl bg-white/80 border border-white shadow-sm backdrop-blur-md px-4 py-4"
+              >
+                <h3 class="font-semibold mb-1 text-[13px]">Spremate li moje podatke?</h3>
+                <p class="text-[11px] text-neutral-600 leading-relaxed">
+                  Ne. Izračun se radi u trenutku i ne spremamo tvoje unose.
+                </p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="border-t border-black/5 bg-white/85 mt-auto">
+        <div
+          class="max-w-6xl mx-auto px-4 lg:px-6 py-3 text-[11px] text-neutral-500 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between"
+        >
+          <p>© <span id="year"></span> KolikoAuto – neovisni kalkulator troškova auta za HR.</p>
+          <p>Brojke su procjene, ne financijski savjet.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
