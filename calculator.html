@@ -159,38 +159,69 @@
             </form>
           </section>
 
-          <!-- REZULTATI -->
+          <!-- REZULTATI – SHAREABLE CARD -->
           <section
             id="results"
             hidden
-            class="rounded-[32px] bg-white/90 border border-white shadow-md shadow-black/5 backdrop-blur-md px-5 sm:px-8 py-6 sm:py-8 space-y-6"
+            class="rounded-[32px] bg-white shadow-lg shadow-black/10 border border-white/80 backdrop-blur-md px-5 sm:px-8 py-6 sm:py-8 space-y-6"
           >
-            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4">
-              <div>
-                <h2 class="text-lg sm:text-xl font-semibold text-neutral-900 mb-1">
+            <!-- Gornji dio: auto + glavni brojevi + share -->
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <div class="space-y-1">
+                <p
+                  id="result-car-name"
+                  class="text-[11px] font-semibold text-neutral-500 uppercase tracking-[0.16em]"
+                >
+                  <!-- npr. BMW 520d (2014) -->
+                </p>
+                <h2 class="text-lg sm:text-xl font-bold text-neutral-900">
                   Tvoj procijenjeni trošak auta
                 </h2>
-                <p class="text-xs text-neutral-600 max-w-md">
-                  Ukupni godišnji i mjesečni trošak vlasništva – gorivo, registracija, servis, gume,
-                  neplanirani kvarovi i amortizacija.
+                <p id="result-meta" class="text-xs text-neutral-500 max-w-md">
+                  <!-- npr. veća limuzina • dizel • 20.000 km/god • gorivo ~ 1,55 €/L -->
                 </p>
               </div>
-              <div class="text-right space-y-1">
-                <p class="text-[11px] uppercase tracking-[0.18em] text-neutral-500">
-                  Godišnje
-                </p>
-                <p id="total-yearly" class="text-2xl sm:text-3xl font-semibold text-neutral-900">
-                  – €
-                </p>
-                <p class="text-[11px] uppercase tracking-[0.18em] text-neutral-500 mt-3">
-                  Mjesečno (prosjek)
-                </p>
-                <p id="total-monthly" class="text-lg font-semibold text-neutral-900">
-                  – €
+
+              <div class="flex flex-col items-end gap-3">
+                <div class="text-right">
+                  <p class="text-[11px] uppercase tracking-[0.18em] text-neutral-500">
+                    Godišnje
+                  </p>
+                  <p id="total-yearly" class="text-2xl sm:text-3xl font-semibold text-neutral-900">
+                    – €
+                  </p>
+                  <p class="text-[11px] text-neutral-500 mt-1">
+                    ukupni trošak vlasništva
+                  </p>
+                </div>
+
+                <div class="text-right">
+                  <p class="text-[11px] uppercase tracking-[0.18em] text-neutral-500">
+                    Mjesečno (prosjek)
+                  </p>
+                  <p id="total-monthly" class="text-lg font-semibold text-neutral-900">
+                    – €
+                  </p>
+                </div>
+
+                <button
+                  id="share-btn"
+                  type="button"
+                  class="inline-flex items-center rounded-full border border-emerald-500/70 px-3 py-1.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition"
+                >
+                  Podijeli rezultat
+                </button>
+
+                <p
+                  id="share-info"
+                  class="text-[10px] text-neutral-400 text-right max-w-[220px] leading-snug"
+                >
+                  Nakon izračuna možeš podijeliti ovaj rezultat kao link.
                 </p>
               </div>
             </div>
 
+            <!-- Breakdown grid -->
             <div class="grid gap-4 md:grid-cols-3 text-[12px] text-neutral-700">
               <div class="space-y-1">
                 <p class="font-semibold text-neutral-900">Gorivo godišnje</p>
