@@ -71,44 +71,50 @@
           </section>
 
     <!-- HERO SLIKA + FULL-WIDTH GLASS OVERLAY -->
-<section class="relative rounded-[32px] bg-white shadow-lg shadow-black/10 overflow-hidden">
+    <section class="relative rounded-[32px] bg-white shadow-lg shadow-black/10 overflow-hidden">
 
-  <!-- Slika auta -->
- <img
-  src="public/cars/hero-car.png"
-  alt="Primjer auta"
-  class="w-full h-[440px] sm:h-[520px] lg:h-[560px] object-cover"
-/>
+      <!-- Slika auta -->
+      <img
+        src="public/cars/hero-car.png"
+        alt="Primjer auta"
+        class="w-full h-[260px] sm:h-[440px] lg:h-[560px] object-cover"
+      />
 
+      <!-- GLASS KARTICA -->
+      <div
+        class="
+          /* MOBITEL (default) */
+          -mt-10 mx-auto w-[92%]
+          rounded-3xl bg-white/80 border border-white/60
+          backdrop-blur-xl shadow-[0_18px_45px_rgba(15,23,42,0.25)]
+          p-5
 
- <!-- FULL-WIDTH RIGHT SIDE GLASS CARD -->
-<div
-  class="absolute bottom-6 right-6 
-         w-[60%] lg:w-[55%] xl:w-[50%]
-         rounded-3xl bg-white/70 border border-white/50 
-         backdrop-blur-2xl shadow-[0_18px_45px_rgba(15,23,42,0.25)]
-         p-6 sm:p-8 lg:p-10"
->
-  <h3 class="text-xl lg:text-2xl font-semibold text-neutral-900 mb-3">
-    Koliko te tvoj auto stvarno košta?
-  </h3>
+          /* TABLET/DESKTOP */
+          sm:mt-0 sm:w-[60%] sm:absolute sm:bottom-6 sm:right-6
+          sm:p-6
+          lg:w-[55%] xl:w-[50%] lg:p-10
+        "
+      >
+        <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-neutral-900 mb-3">
+          Koliko te tvoj auto stvarno košta?
+        </h3>
 
-  <p class="text-sm sm:text-base text-neutral-700 leading-relaxed mb-5">
-    Unesi auto i godišnju kilometražu – dobit ćeš razbijen trošak po kategorijama:
-    gorivo, registracija, servis, gume, kvarovi i amortizacija. Bez filtera i marketinga – samo realne procjene.
-  </p>
+        <p class="text-sm sm:text-base text-neutral-700 leading-relaxed mb-5">
+          Unesi auto i godišnju kilometražu – dobit ćeš razbijen trošak po kategorijama:
+          gorivo, registracija, servis, gume, kvarovi i amortizacija. Bez filtera i marketinga – samo realne procjene.
+        </p>
 
-  <a
-    href="/calculator.html"
-    class="inline-flex items-center justify-center rounded-full bg-emerald-500 hover:bg-emerald-600
-           text-white text-sm sm:text-base px-6 py-3 font-semibold shadow-md shadow-emerald-400/40 transition"
-  >
-    Otvori kalkulator
-  </a>
-</div>
+        <a
+          href="/calculator.html"
+          class="inline-flex items-center justify-center rounded-full bg-emerald-500 hover:bg-emerald-600
+                 text-white text-sm sm:text-base px-6 py-3 font-semibold shadow-md shadow-emerald-400/40 transition"
+        >
+          Otvori kalkulator
+        </a>
+      </div>
 
+    </section>
 
-</section>
 
           <!-- NOVA GLASS SEKCIJA: KOLIKO TE KOŠTA TVOJ AUTO? -->
           <section
