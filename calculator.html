@@ -2,19 +2,17 @@
 <html lang="hr">
   <head>
     <meta charset="UTF-8" />
-    <title>Kalkulator troška auta – KolikoAuto</title>
+    <title>Kalkulator stvarnog troška auta – KolikoAuto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/public/css/styles.css" />
+    <link href="/public/css/styles.css" rel="stylesheet" />
   </head>
 
-  <body class="bg-gradient-to-b from-[#f7f8fa] to-[#eceef0] text-neutral-900">
+  <body class="bg-[#f4f5f8] text-neutral-900">
     <div class="min-h-screen flex flex-col">
 
       <!-- HEADER -->
-      <header class="w-full border-b border-black/10 bg-white/80 backdrop-blur-md">
-        <div
-          class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between"
-        >
+      <header class="w-full bg-white/85 border-b border-black/5 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6 py-4 flex items-center justify-between gap-4">
           <a href="/index.html" class="flex items-center gap-2">
             <div
               class="h-8 w-8 rounded-xl bg-neutral-900 text-white flex items-center justify-center text-xs font-bold shadow"
@@ -26,7 +24,7 @@
 
           <a
             href="/index.html"
-            class="text-xs text-neutral-600 hover:text-emerald-600 transition"
+            class="text-[11px] text-neutral-500 hover:text-neutral-700 transition-colors"
           >
             ← Natrag na početnu
           </a>
@@ -35,119 +33,215 @@
 
       <!-- MAIN -->
       <main class="flex-1 w-full">
-        <div class="max-w-5xl mx-auto px-4 py-10">
-          
-          <h1 class="text-3xl font-bold mb-3">Kalkulator stvarnog troška auta</h1>
-          <p class="text-sm text-neutral-600 max-w-xl mb-8">
-            Odaberi auto, unesi godišnje kilometre i cijenu goriva. Dobit ćeš procjenu 
-            ukupnog godišnjeg i mjesečnog troška vlasništva u Hrvatskoj.
-          </p>
+        <div class="max-w-6xl mx-auto px-4 lg:px-6 pt-12 pb-20 space-y-10">
 
-          <!-- GLASS PANEL -->
+          <!-- NASLOV -->
+          <section class="space-y-3">
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
+              Kalkulator stvarnog troška auta
+            </h1>
+            <p class="text-sm sm:text-base text-neutral-600 max-w-xl">
+              Odaberi auto, unesi godišnje kilometre i cijenu goriva. Dobit ćeš procjenu ukupnog
+              godišnjeg i mjesečnog troška vlasništva u Hrvatskoj.
+            </p>
+          </section>
+
+          <!-- KALKULATOR KARTICA -->
           <section
-            class="rounded-3xl bg-white/70 backdrop-blur-xl border border-white shadow-lg px-6 py-8"
+            class="rounded-[32px] bg-white/90 border border-white shadow-lg shadow-black/10 backdrop-blur-md px-5 sm:px-8 py-6 sm:py-8"
           >
-            <h2 class="text-lg font-semibold mb-4 flex items-center justify-between">
-              1. Unesi podatke
-
-              <span class="text-[10px] tracking-widest uppercase bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full border border-neutral-300">
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <h2 class="text-sm font-semibold text-neutral-800">
+                1. Unesi podatke
+              </h2>
+              <span
+                class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-neutral-500"
+              >
                 Kalkulator
               </span>
-            </h2>
+            </div>
 
-            <!-- FORM -->
             <form id="calc-form" class="space-y-6">
-              
-              <!-- SELECT -->
-              <div>
-                <label class="block text-sm font-medium mb-1">Model auta</label>
 
-                <select
-                  id="car-select"
-                  class="block w-full rounded-xl border border-neutral-300 bg-white px-3 py-3 text-sm text-neutral-900 shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                  required
-                >
-                  <option value="">Učitavanje modela...</option>
-                </select>
+              <!-- FILTER BAR: MARKA / MODEL / GODIŠTE -->
+              <div class="grid gap-4 md:grid-cols-3">
+
+                <!-- Marka -->
+                <div>
+                  <label for="brand-select" class="block text-sm font-medium text-neutral-800 mb-1">
+                    Marka
+                  </label>
+                  <select
+                    id="brand-select"
+                    class="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm
+                           focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  >
+                    <option value="">Sve marke</option>
+                  </select>
+                </div>
+
+                <!-- Model -->
+                <div>
+                  <label for="car-select" class="block text-sm font-medium text-neutral-800 mb-1">
+                    Model
+                  </label>
+                  <select
+                    id="car-select"
+                    class="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm
+                           focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 disabled:bg-neutral-50"
+                    disabled
+                  >
+                    <option value="">Prvo odaberi marku</option>
+                  </select>
+                </div>
+
+                <!-- Godište -->
+                <div>
+                  <label for="year-select" class="block text-sm font-medium text-neutral-800 mb-1">
+                    Godište
+                  </label>
+                  <select
+                    id="year-select"
+                    class="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm
+                           focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  >
+                    <option value="">Sva godišta</option>
+                  </select>
+                </div>
               </div>
 
-              <!-- KM + CIJENA -->
-              <div class="grid sm:grid-cols-2 gap-6">
+              <!-- Km + cijena goriva -->
+              <div class="grid gap-4 md:grid-cols-2">
                 <div>
-                  <label class="block text-sm font-medium mb-1">
+                  <label for="annual-km" class="block text-sm font-medium text-neutral-800 mb-1">
                     Godišnja kilometraža
                   </label>
                   <input
-                    type="number"
                     id="annual-km"
+                    type="number"
+                    min="0"
+                    inputmode="numeric"
+                    class="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm
+                           focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                     placeholder="npr. 15 000"
-                    class="block w-full rounded-xl border border-neutral-300 bg-white px-3 py-3 text-sm shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                    required
                   />
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium mb-1">
+                  <label for="fuel-price" class="block text-sm font-medium text-neutral-800 mb-1">
                     Cijena goriva po litri (€)
                   </label>
                   <input
-                    type="number"
                     id="fuel-price"
-                    value="1.50"
+                    type="number"
+                    min="0"
                     step="0.01"
-                    class="block w-full rounded-xl border border-neutral-300 bg-white px-3 py-3 text-sm shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                    required
+                    class="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm
+                           focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    value="1.50"
                   />
                 </div>
               </div>
 
-              <!-- BUTTON -->
-              <button
-                type="submit"
-                class="rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 text-sm font-semibold shadow-md transition"
-              >
-                Izračunaj trošak auta
-              </button>
-            </form>
-
-
-            <!-- RESULTS -->
-            <section id="results" hidden class="mt-10 pt-6 border-t border-neutral-300">
-              <h2 class="text-lg font-semibold mb-4">2. Tvoj trošak auta</h2>
-
-              <div class="grid sm:grid-cols-2 gap-4 mb-6">
-                <div class="rounded-xl bg-white p-4 border border-neutral-200 shadow">
-                  <p class="text-xs text-neutral-600">Godišnji trošak</p>
-                  <p id="total-yearly" class="text-2xl font-bold mt-1">–</p>
-                </div>
-
-                <div class="rounded-xl bg-white p-4 border border-neutral-200 shadow">
-                  <p class="text-xs text-neutral-600">Mjesečni trošak</p>
-                  <p id="total-monthly" class="text-2xl font-bold mt-1">–</p>
-                </div>
+              <div class="pt-2">
+                <button
+                  type="submit"
+                  class="inline-flex items-center justify-center rounded-full bg-emerald-500 hover:bg-emerald-600
+                         text-white px-6 py-2.5 text-sm font-semibold shadow-md shadow-emerald-400/40 transition"
+                >
+                  Izračunaj trošak auta
+                </button>
               </div>
 
-              <h3 class="font-semibold mb-2">Detalji po kategorijama</h3>
-              <div class="space-y-1 text-sm">
-                <div class="flex justify-between"><span>Gorivo</span> <span id="fuel-yearly">–</span></div>
-                <div class="flex justify-between"><span>Registracija + osiguranje</span> <span id="ins-yearly">–</span></div>
-                <div class="flex justify-between"><span>Servis</span> <span id="service-yearly">–</span></div>
-                <div class="flex justify-between"><span>Gume</span> <span id="tires-yearly">–</span></div>
-                <div class="flex justify-between"><span>Neplanirani kvarovi</span> <span id="repairs-yearly">–</span></div>
-                <div class="flex justify-between"><span>Amortizacija</span> <span id="depr-yearly">–</span></div>
-              </div>
-
-              <p class="text-xs text-neutral-500 mt-4">
-                Procjene su temeljene na stvarnim troškovima prosječnog vozača u Hrvatskoj.
+              <p class="text-[11px] text-neutral-500">
+                Ne spremamo tvoje podatke. Rezultat su procjene za prosječnog vozača u Hrvatskoj.
               </p>
-            </section>
-
+            </form>
           </section>
+
+          <!-- REZULTATI -->
+          <section
+            id="results"
+            hidden
+            class="rounded-[32px] bg-white/90 border border-white shadow-md shadow-black/5 backdrop-blur-md px-5 sm:px-8 py-6 sm:py-8 space-y-6"
+          >
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4">
+              <div>
+                <h2 class="text-lg sm:text-xl font-semibold text-neutral-900 mb-1">
+                  Tvoj procijenjeni trošak auta
+                </h2>
+                <p class="text-xs text-neutral-600 max-w-md">
+                  Ukupni godišnji i mjesečni trošak vlasništva – gorivo, registracija, servis, gume,
+                  neplanirani kvarovi i amortizacija.
+                </p>
+              </div>
+              <div class="text-right space-y-1">
+                <p class="text-[11px] uppercase tracking-[0.18em] text-neutral-500">
+                  Godišnje
+                </p>
+                <p id="total-yearly" class="text-2xl sm:text-3xl font-semibold text-neutral-900">
+                  – €
+                </p>
+                <p class="text-[11px] uppercase tracking-[0.18em] text-neutral-500 mt-3">
+                  Mjesečno (prosjek)
+                </p>
+                <p id="total-monthly" class="text-lg font-semibold text-neutral-900">
+                  – €
+                </p>
+              </div>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-3 text-[12px] text-neutral-700">
+              <div class="space-y-1">
+                <p class="font-semibold text-neutral-900">Gorivo godišnje</p>
+                <p id="fuel-yearly">– €</p>
+              </div>
+              <div class="space-y-1">
+                <p class="font-semibold text-neutral-900">Registracija + osiguranje</p>
+                <p id="ins-yearly">– €</p>
+              </div>
+              <div class="space-y-1">
+                <p class="font-semibold text-neutral-900">Servis i održavanje</p>
+                <p id="service-yearly">– €</p>
+              </div>
+              <div class="space-y-1">
+                <p class="font-semibold text-neutral-900">Gume (prosjek po godini)</p>
+                <p id="tires-yearly">– €</p>
+              </div>
+              <div class="space-y-1">
+                <p class="font-semibold text-neutral-900">Neplanirani kvarovi</p>
+                <p id="repairs-yearly">– €</p>
+              </div>
+              <div class="space-y-1">
+                <p class="font-semibold text-neutral-900">Amortizacija (pad vrijednosti)</p>
+                <p id="depr-yearly">– €</p>
+              </div>
+            </div>
+
+            <p class="text-[11px] text-neutral-500">
+              Ovo su realne procjene troškova za prosječnog vlasnika vozila u Hrvatskoj. Tvoj
+              konkretni trošak može biti viši ili niži ovisno o stilu vožnje, gradu, vrsti cesta i
+              održavanju.
+            </p>
+          </section>
+
         </div>
       </main>
 
+      <!-- FOOTER -->
+      <footer class="border-t border-black/5 bg-white/85 mt-auto">
+        <div
+          class="max-w-6xl mx-auto px-4 lg:px-6 py-3 text-[11px] text-neutral-500 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between"
+        >
+          <p>© <span id="year"></span> KolikoAuto – neovisni kalkulator troškova auta za HR.</p>
+          <p>Brojke su procjene, ne financijski savjet.</p>
+        </div>
+      </footer>
     </div>
 
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
     <script type="module" src="/app.js"></script>
   </body>
 </html>
